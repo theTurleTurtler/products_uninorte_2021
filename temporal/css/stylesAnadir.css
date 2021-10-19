@@ -1,0 +1,285 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+body{
+    background: #f2f2f2;
+    
+}
+
+/* Navegacion */
+
+header{
+    
+    background: white;
+    height: 169px;
+    /* width: 100%; hacemos que la cabecera ocupe el ancho completo de la página */
+	/* left: 0; Posicionamos la cabecera al lado izquierdo */
+	/* top: 0; Posicionamos la cabecera pegada arriba */
+	/* position: fixed; */
+    
+
+/*     top: 0;
+    left: 0;
+    right: 0;
+    position: fixed; */
+    box-shadow: 0px 5px 6px #00000029;
+    
+    /* margin-bottom: 5px; */
+    
+}
+
+
+
+.container{
+    width: 100%;
+    max-width: 1670px;
+    height: 169px;
+    /* background: #04ff8a;  */
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    
+}
+
+.container nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* img{
+    width: 50px;
+    height: 50px;
+    
+} */
+
+.cart{
+    width: 165px;
+    height: 81px;
+    background: #70707014 0% 0% no-repeat padding-box;
+    border-radius: 44px;
+    opacity: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+nav{
+    width: 100%;
+    max-width: 1670px;
+  
+   /*  background: cyan; */
+}
+
+nav a{
+    text-decoration: none;
+    font: normal normal normal 22px/30px;
+    color: var(--unnamed-color-707070);
+    color: #707070;
+}
+
+nav div{
+    display: inline-block
+}
+
+.usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.usuario .par{
+    margin: 0 15px;
+}
+
+.location{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.location .ok{
+    width: 50%;
+    
+}
+
+.m{
+    width: 59px;
+    height: 37px;
+}
+
+.u{
+    width: 82px;
+    height: 82px;
+}
+
+.c{
+    width: 58px;
+    height: 57px;
+}
+
+.l{
+    width: 136px;
+    height: 139px;
+}
+
+.buscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.in{
+    width: 293px;
+    height: 51px;
+    border: 1px solid #707070;
+    border-radius: 26px;
+    opacity: 1;
+    padding: 12px 12px 12px;
+    outline: none;
+}
+.s{
+    width: 66px;
+    height: 76px;
+    transform: matrix(0.88, -0.47, 0.47, 0.88, 0, 0);
+}
+
+
+.lo{
+    width: 43px;
+    height: 74px;
+}
+
+.burger-menu {
+    color: var(--primary-color);
+    font-size: 2rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+/* ------------------------------------------------------------------------------------Main--------------------------------------------------------------------------------- */
+
+main{
+    width: 100%;
+    max-width: 1670px;
+    height: 1080px;
+    background-color: hsla(0, 0%, 100%, 0.835);
+    margin: 0 auto;
+
+    
+}
+
+.inp{
+    width: 428px;
+    height: 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 30px;
+    opacity: 1;
+    outline: none;
+    padding: 12px 12px 12px;
+}
+
+div input{
+    width: 202px;
+    height: 64px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 6px #00000029;
+    border-radius: 40px;
+    border: none;
+    opacity: 1;
+    margin: 15px;
+    
+}
+
+
+
+
+.firts{
+    
+    display: flex;
+    
+
+}
+
+.exterior{
+    width: 50%; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 48px 0;
+
+}
+
+.content{
+    margin: 15px;
+    
+}
+
+
+
+.okok .botones{
+    display: flex;
+    justify-content: space-around
+
+
+}
+.second{
+    width: 50%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+.mod{
+    margin-top: 140px;
+    
+    display: flex;
+    justify-content: right;
+   
+
+}
+
+
+.imagen img{
+    width: 671px;
+    height: 354px;
+    margin-top: 65px;
+    border: 1px solid var(--unnamed-color-707070);
+    background: transparent url('img/revolt-164_6wVEHfI-unsplash.png') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 28px;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src={{url_for("static", filename="bootstrap/jquery/jquery-3.6.0.min.js")}}></script>
+        <script src={{url_for("static", filename="bootstrap/js/bootstrap.js")}}></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href={{url_for("static", filename="bootstrap/css/bootstrap.css")}}>
+    <link href={{url_for("static", filename="califications.css")}}
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href={{url_for("static", filename="styles.css")}}>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href=""><img src={{url_for("static", filename="data/Menu.svg")}} alt="" class="m"></a>
+                <div class="usuario">
+                    <a href=""><img src={{url_for("static", filename="data/foto.svg")}} alt="" class="u"></a>
+                    <a class="par" href="#">Usuario</a>
+                    <a href=""><img src={{url_for("static", filename="data/arrow.svg")}} alt="" ></a>
+                </div>
+                <div class="cart">
+                    <a href="#"><img src={{url_for("static", filename="data/cart_1.svg")}} alt="" class="c"></a>
+                    <p>0</p>
+                </div>
+                <a href="#"><img src={{url_for("static", filename="data/LogoR.svg")}} alt="" class="l"></a>
+                <div class="buscar">
+                    <label for="se"></label>
+                    <input class="in" type="text" placeholder="Search..." id="se">
+                    <a href="#"><img src={{url_for("static", filename="data/search.svg")}} alt="" class="s"></a>
+                </div>
+                
+                <div class="location">
+                    <a href="#" class="ok">Ingresa tu ubicación</a>
+                    <a href="#"><img src={{url_for("static", filename="data/Location.svg")}} alt="" class="lo"></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="row transparent">
+        <div class="col-sm-2 transparent"></div>
+        <div class="col-sm-8 shadow-lg p-3 mb-5 bg-white rounded mx-2 px-5" id="central_section">
+            <div class="row my-5">
+                <h2 class="mx-auto">Agenda de cuero resistente al fuego</h2>
+            </div>
+            
+        </div>
+        <div class="col-sm-2 transparent"></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+            <h2>Comentarios</h2>
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" id="cards_comments">
+            <div class="card my-2">
+                <div class="row mt-2 pl-2">
+                    <div class="col-sm-4">
+                        <img src={{url_for("static", filename="data/testing/user_1.jpg")}} class="avatar_img" alt=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>User X</h3>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <form class="row px-2 mt-2 form-group">
+                    <div class="col-sm-12">
+                        <textarea class="form-control" placeholder="Agrega un comentario" rows="5" id="comment"></textarea>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</body>
+
+<script>
+    const user = [
+        {
+            name:'Sir William',
+            comment: 'Me pareció un producto muy bueno. Llegó a tiempo, pero, sobre todo, la calidad del producto es impecable. 10/10.',
+            avatar: `{{url_for("static", filename="data/testing/user_3.jpg")}}`
+        },
+        {
+            name:'Jackie',
+            comment: 'Me pareció un producto muy bueno. Llegó a tiempo, pero, sobre todo, la calidad del producto es impecable. 10/10.',
+            avatar: `{{url_for("static", filename="data/testing/user_2.jpg")}}`
+        },
+        {
+            name:'Felix Cat',
+            comment: 'Me pareció un producto muy bueno. Llegó a tiempo, pero, sobre todo, la calidad del producto es impecable. 10/10.',
+            avatar: `{{url_for("static", filename="data/testing/user_1.jpg")}}`
+        }
+    ];
+
+    $(document).ready(function(){
+        load_comments();
+    });
+
+    const load_comments = () =>{
+        let cards = user.map(e =>{
+            return ` 
+            <div class="card my-2">
+                <div class="row mt-2 px-4">
+                    <div class="col-sm-4">
+                        <img src="${e.avatar}" alt="" class="img-fluid avatar_img"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>${e.name}</h3>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <div class="row px-4 mt-2">
+                    <div class="col-sm-12">
+                        <p>${e.comment}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            `
+        });
+        console.log(cards);
+        $('#cards_comments').append(cards);
+    }
+
+
+</script>
+</html>
+
+<!--
+        <div class="navbar" id="custom_navbar">
+            <a class="active" href="#" >
+                <div class="nav-item">
+                    <img src="../../data/account_icon.jpeg"  id="user_icon" alt=""/>
+                    <label for="user_icon">Ingresar</label>
+                </div>
+            </a>
+            <a href="#" >
+                <div id="shopping_cart_item" class="nav-item">
+                    <img src="../../data/shopping_cart_icon.jpeg" id="shopping_cart_icon" alt=""/>
+                    <label for=shopping_cart_icon"">0</label>
+                </div>
+            </a>
+            <form class="form-inline" action="/action_page.php">
+                <input id="search_input" class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-light btn-circle nav-item" type="submit">
+                    <img src="../../data/search_icon.jpeg" id="shopping_cart_icon" alt="" width="75" height="100" />
+                </button>
+            </form>
+            <a href="#">
+                <div class="nav-item">
+                    <label for=shopping_cart_icon"">Ingresa tu ubicación</label>
+                    <img src="../../data/map_place_icon.jpeg" id="shopping_cart_icon" alt="" width="30" height="50" />
+                </div>
+            </a>
+        </div>
+        -->
+
+<!--
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2 calification">
+        <i class="fa fa-star calification_icon" aria-hidden="true" ></i>
+        <p>5</p>
+    </div>
+-->

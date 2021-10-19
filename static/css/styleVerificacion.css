@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.centrando{
+   /*  background: chartreuse; */
+    text-align: center;
+    margin-bottom: 15px;
+}
+.logo{
+    width: 156px;
+    height: 172px;
+}
+
+
+
+.sec{
+    display: flex;
+
+}
+
+.left{
+
+    width: 497px;
+    height: 1080px;
+    object-fit: cover;
+}
+
+.sec2{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 1423px;
+    height: 1080px;
+    border: 1px solid var(--unnamed-color-707070);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+}
+
+.t{
+
+    width: 499px;
+    height: 47px;
+    border: 1px solid var(--unnamed-color-707070);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 31px;
+    opacity: 1;
+    margin: 10px 0;
+}
+
+.b{
+
+    width: 527px;
+    height: 56px;
+    border: 1px solid var(--unnamed-color-707070);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 31px;
+    opacity: 1;
+}
+
+.iniciar{
+    width: 242px;
+    height: 47px;
+    border: 1px solid var(--unnamed-color-707070);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 31px;
+    opacity: 1;
+    cursor: pointer;
+}
+.centro{
+    
+    margin-top: 15px;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+.parrafo{
+    margin-top: 20px;
+    font: normal normal normal 17px/22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.parrafo p{
+    margin-bottom: 12px;
+}
+
+.c{
+
+    /* text-align: left; */
+    font: normal normal normal 17px/22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+.c a span{
+  /*   text-align: left; */
+    text-decoration: underline;
+    font: normal normal normal 17px/22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+
+
+.exterior{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    
+}
+
+.interior{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* capas */
+    padding: 45px;
+    width: 616px;
+    height: 484px;
+    /* UI propiedades */
+    background: transparent linear-gradient(224deg, #5EB23B 0%, #0D6F78 100%) 0% 0% no-repeat padding-box;
+    border-radius: 29px;
+    opacity: 1;
+
+}
+
+
+
+
+.formulario{
+
+    color: #fff;
+}
+
+.par label p{
+/*     text-align: left; */
+    font: normal normal normal 17px/22px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+
+
+.rs button{
+    padding: 9px 30px 10px;
+    text-align: center;
+    margin-top: 7px;
+    /* display: flex;
+    justify-content: space-between; */
+    /* align-items: center; */
+}
+
+input{
+    outline: none;
+    padding: 9px 12px 10px;
+}
+
+
+.btn{
+    margin: 55px 35px 0;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+
+
+
+.b1{
+    
+    width: 328px;
+    height: 68px;
+    border: none;
+    background: transparent linear-gradient(110deg, #5EB23B 0%, #0D6F78 66%, #0D6F78 100%) 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+    margin: 15px;
+
+
+}
+
+.b1 a span{
+    color: #fff;
+} 
+
+.b1 a{
+    text-decoration: none;
+} 
+
+.write{
+    width: 499px;
+    height: 57px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: justify;
+
+}
+
+
