@@ -19,15 +19,15 @@
         <div class="exterior">
             <div class="interior">
                 <div class="formulario">
-                    <form action="">
+                    <form  method="post" action="{{ url_for('login') }}">
                         <div class="par">
                             <label for="em"><p>Correo electrónico/Móvil:</p></label>
-                            <input class="t" id="_em" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="Correo electrónico o móvil" name="email" aria-required="true" value="">
+                            <input class="t" id="username" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="Correo electrónico o móvil" name="email" aria-required="true" value="">
                         </div>
                         
                         <div class="par">   
                             <label for="contra"><p>Contraseña:</p></label>
-                            <input class="t" id="contra" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="">    
+                            <input class="t" id="password" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="">    
                         </div>
 
                         <div class="centro">
