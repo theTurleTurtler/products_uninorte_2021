@@ -5,8 +5,13 @@ from flask import request
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
+from models import *
+from config import dev
+
 from flask.helpers import flash
 app = Flask(__name__)
+app.config.from_object(dev)
+db.init_app(app)
 
 @app.route("/")
 def index():
@@ -21,15 +26,6 @@ def getCalifications(product_id):
 def edit_perfil():
     return render("EditarPerfil.html")
 
-
-
-
-
-
-
-
-
-""" roberto posada empezo aqui """
 def sql_connection():
     con = sqlite3.connect('agenda.db')
     return con
