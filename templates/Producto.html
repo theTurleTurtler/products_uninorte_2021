@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="static/css/stylesProducto.css">
-    <link rel="shortcut icon" href="static/Img/FaviconR.png" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesProducto.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Img/FaviconR.png') }}" type="image/x-icon">
    
-    <script src="static/js/product.js" defer></script>
-    <script src="static/js/direccion.js" defer></script>
-    <script src="static/js/perfil.js" defer></script>
-    <script src="static/js/lightbox.js" defer></script>
+    <script src="{{ url_for('static', filename='js/product.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/direccion.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/perfil.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/lightbox.js')}}" defer></script>
 </head>
 <body class="body">
 
@@ -23,7 +23,7 @@
 
             </div>
            <div class="sera">
-            <img src="static/Img/Location.svg" alt="" class="img-galeria">
+            <img src=" {{ url_for('static', filename='Img/Location.svg') }}" alt="" class="img-galeria">
 
          
                  <p class="recibir">¿Donde recibirás tu compra?</p>
@@ -35,7 +35,7 @@
                                 <div class="num">
                                     <div class="num1">            
                                         <div>
-                                            <img src="static/Img/IconosNav/awesome-check-circle.svg" alt="">
+                                            <img src="{{ url_for('static', filename='Img/IconosNav/awesome-check-circle.svg') }}" alt="">
                                         </div>
                                         <div class="columna">
                                             <input class="nothing" type="text" id="direccion" value="" placeholder="Dirección...">
@@ -80,7 +80,7 @@
 
 
         <section class="imagen-light">
-            <img src="Img/Close.svg" alt="" class="close">
+            <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="close">
             <img src="" alt="" class="agregar-imagen">         
         </section>
     </section>
@@ -94,31 +94,34 @@
         <div class="fondo31">
             <div class="yes">
                 <div class="yes2">
-                    <a href=""><img src="static/Img/foto.svg" alt="" class="u"></a>
+                    <a href=""><img src="{{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
+                    {% for message in get_flashed_messages() %}
+                            <div class="flash" style="color: black;">{{ message }}</div>
+                    {% endfor %}
                     <p>Nombre</p>
                     <P>Correo Electronico</P>
                 </div>
                 <div class="claro">
                     <div>
-                        <a href=""><img src="static/Img/IconosNav/metro-profile.svg" alt="">Perfil</a>
-                        <a href=""><img src="static/Img/IconosNav/awesome-edit.svg" alt="">Editar Perfil</a>
-                        <a href=""><img src="static/Img/IconosNav/awesome-database.svg" alt="">Politica de Privacidad</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/metro-profile.svg') }}" alt="">Perfil</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/awesome-edit.svg') }}" alt="">Editar Perfil</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/awesome-database.svg') }}" alt="">Politica de Privacidad</a>
                     </div>
                     <div>
-                        <a href=""><img src="static/Img/IconosNav/material-add-alert.svg" alt="">Mis alertas</a>
-                        <a href=""><img src="static/Img/IconosNav/ionic-md-help-circle.svg" alt="">Ayuda</a>
-                        <a href=""><img src="static/Img/IconosNav/metro-location.svg" alt="" class="img1">Agregar ubicación</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/material-add-alert.svg') }}" alt="">Mis alertas</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-help-circle.svg') }}" alt="">Ayuda</a>
+                        <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/metro-location.svg') }}" alt="" class="img1">Agregar ubicación</a>
                     </div>
                 </div>
                 <div class="listadeseos">
-                    <a href=""><img src="static/Img/IconosNav/ionic-md-star.svg" alt="">Lista de deseos</a>
+                    <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-star.svg') }}" alt="">Lista de deseos</a>
                 </div>
                 <div class="salirahora">
-                    <a href=""><img src="static/Img/IconosNav/awesome-sign-out-alt.svg" alt="">Salir</a>
+                    <a href="/logout"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-sign-out-alt.svg') }}" alt="">Salir</a>
                 </div>
             </div>
             <section class="imagen-light">
-                <img src="static/Img/Close.svg" alt="" class="closek">
+                <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="closek">
                 <img src="" alt="" class="agregar-imagen">         
             </section>
         </div>
@@ -151,63 +154,60 @@
     <header>
         <div class="container">
             <nav>
-                <!-- <button class="burger-menu" id="burger-menu">
-                    <img src="Img/Menu.svg" alt="" class="m">                       
-                </button> -->
-                <img src="static/Img/Menu.svg" alt="" class="m">   
+                <img src="{{ url_for('static', filename='Img/Menu.svg') }}" alt="" class="m">   
 
                 <nav class="menu-navegacion">
-                    <img class="superior" src="static/Img/IconosNav/contornoatrazado.svg" alt="">
-                    <img class="abs" src="static/Img/IconosNav/Logo.svg" alt="">
+                    <img class="superior" src="{{ url_for('static', filename='Img/IconosNav/contornoatrazado.svg') }}" alt="">
+                    <img class="abs" src=" {{ url_for('static', filename='Img/IconosNav/Logo.svg') }}" alt="">
                                 <section class="contenedorA">
                                     
                                     <section class="ladoA">
                                         <h2>Categorias</h2>
                                         <hr/>
-                                        <a href="#Televisores"><img src="static/Img/IconosNav/awesome-tv.svg" alt="">Televisores</a>
-                                        <a href="#Celulares"><img src="static/Img/IconosNav/ionic-ios-phone-portrait.svg" alt="">Celulares</a>
-                                        <a href="#Bolsos"><img src="static/Img/IconosNav/awesome-shopping-bag.svg" alt="">Bolsos</a>
-                                        <a href="#Tecnologia"><img src="static/Img/IconosNav/material-laptop-mac.svg" alt="">Tecnologia</a>
-                                        <a href="#Camaras"><img src="static/Img/IconosNav/ionic-ios-camera.svg" alt="">Camaras</a>
-                                        <a href="#Cosasdelhogar"><img src="static/Img/IconosNav/ionic-md-home.svg" alt="">Cosas del hogar</a>
-                                        <a href="#RelojesyJoyas"><img src="static/Img/IconosNav/ionic-md-watch.svg" alt="">Relojes y Joyas</a>
-                                        <a href="#Mascotas"><img src="static/Img/IconosNav/awesome-dog.svg" alt="">Mascotas</a>
-                                        <a href="#Juegos"><img src="static/Img/IconosNav/ionic-logo-game-controller-b.svg" alt="">Juegos</a>
-                                        <a href="#Deporte"><img src="static/Img/IconosNav/awesome-volleyball-ball.svg" alt="">Deporte</a>
-                                        <a href="#Musica"><img src="static/Img/IconosNav/awesome-music.svg" alt="">Musica</a>
-                                        <a href="#Salud"><img src="static/Img/IconosNav/awesome-heartbeat.svg" alt="">Salud</a>
-                                        <a href="#Motos"><img src="static/Img/IconosNav/awesome-motorcycle.svg" alt="">Motos</a>
-                                        <a href="#Carros"><img src="static/Img/IconosNav/awesome-car.svg" alt="">Carros</a>
-                                        <a href="#Herramientas"><img src="static/Img/IconosNav/awesome-tools.svg" alt="">Herramientas</a>
-                                        <a href="#Zapatos"><img src="static/Img/IconosNav/awesome-shoe-prints.svg" alt="">Zapatos</a>
-                                        <a href="#MaquillajeyBelleza"><img src="static/Img/IconosNav/map-beauty-salon.svg" alt="">Maquillajje y Belleza</a>
-                                        <a href="#Ropa"><img src="static/Img/IconosNav/ionic-ios-shirt.svg" alt="">Ropa</a>
+                                        <a href="#Televisores"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-tv.svg') }}" alt="">Televisores</a>
+                                        <a href="#Celulares"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-ios-phone-portrait.svg') }}" alt="">Celulares</a>
+                                        <a href="#Bolsos"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-shopping-bag.svg') }}" alt="">Bolsos</a>
+                                        <a href="#Tecnologia"><img src="   {{ url_for('static', filename='Img/IconosNav/material-laptop-mac.svg') }}" alt="">Tecnologia</a>
+                                        <a href="#Camaras"><img src="  {{ url_for('static', filename='Img/IconosNav/ionic-ios-camera.svg') }}" alt="">Camaras</a>
+                                        <a href="#Cosasdelhogar"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-home.svg') }}" alt="">Cosas del hogar</a>
+                                        <a href="#RelojesyJoyas"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-watch.svg') }}" alt="">Relojes y Joyas</a>
+                                        <a href="#Mascotas"><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-dog.svg') }}" alt="">Mascotas</a>
+                                        <a href="#Juegos"><img src="   {{ url_for('static', filename='Img/IconosNav/ionic-logo-game-controller-b.svg') }}" alt="">Juegos</a>
+                                        <a href="#Deporte"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-volleyball-ball.svg') }}" alt="">Deporte</a>
+                                        <a href="#Musica"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-music.svg') }}" alt="">Musica</a>
+                                        <a href="#Salud"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-heartbeat.svg') }}" alt="">Salud</a>
+                                        <a href="#Motos"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-motorcycle.svg') }}" alt="">Motos</a>
+                                        <a href="#Carros"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-car.svg') }}" alt="">Carros</a>
+                                        <a href="#Herramientas"><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-tools.svg') }}" alt="">Herramientas</a>
+                                        <a href="#Zapatos"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-shoe-prints.svg') }}" alt="">Zapatos</a>
+                                        <a href="#MaquillajeyBelleza"><img src="   {{ url_for('static', filename='Img/IconosNav/map-beauty-salon.svg') }}" alt="">Maquillajje y Belleza</a>
+                                        <a href="#Ropa"><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-ios-shirt.svg') }}" alt="">Ropa</a>
                                         
                                     </section>
                                     <section class="ladoB">
                                         <h2 class="others">Otros</h2>
                                         <hr/>
                                         
-                                        <a href="#SobreNosotros"><img src="static/Img/IconosNav/ionic-ios-people.svg" alt="">Sobre Nosotros</a>
-                                        <a href="#Contactenos"><img src="static/Img/IconosNav/material-contacts.svg" alt="">Contactenos</a>
-                                        <a href="#Ofertas"><img src="static/Img/IconosNav/material-local-offer.svg" alt="">Ofertas</a>
-                                        <a href="#NuestrasTiendas"><img src="static/Img/IconosNav/metro-location.svg" alt="">NuestrasTiendas</a>
+                                        <a href="#SobreNosotros"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-ios-people.svg') }}" alt="">Sobre Nosotros</a>
+                                        <a href="#Contactenos"><img src="  {{ url_for('static', filename='Img/IconosNav/material-contacts.svg') }}" alt="">Contactenos</a>
+                                        <a href="#Ofertas"><img src="  {{ url_for('static', filename='Img/IconosNav/material-local-offer.svg') }}" alt="">Ofertas</a>
+                                        <a href="#NuestrasTiendas"><img src="  {{ url_for('static', filename='Img/IconosNav/metro-location.svg') }}" alt="">NuestrasTiendas</a>
                                     </section>
                                 </section>
                                 
                                 <section class="contenedorB">
                                     <section class="country">
                                        <div class="lineas">
-                                            <a href="#pais"><img src="static/Img/IconosNav/colombia.svg" alt="">Colombia</a>
+                                            <a href="#pais"><img src=" {{ url_for('static', filename='Img/IconosNav/colombia.svg') }}" alt="">Colombia</a>
                                        </div>
                                         
                                        
-                                        <a href="#help"><img src="static/Img/IconosNav/ionic-md-help-circle.svg" alt="">Ayuda</a>
-                                        <a href="#lenguages"><img src="static/Img/IconosNav/metro-earth2.svg" alt="">Español</a>
+                                        <a href="#help"><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-md-help-circle.svg') }}" alt="">Ayuda</a>
+                                        <a href="#lenguages"><img src="{{ url_for('static', filename='Img/IconosNav/metro-earth2.svg') }}" alt="">Español</a>
                                     </section>
                                     <section class="deseos">
                                        <div class="lineas">
-                                        <a href="#Lista"><img src="static/Img/IconosNav/ionic-md-star.svg" alt="">Lista de deseos</a>
+                                        <a href="#Lista"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-star.svg') }}" alt="">Lista de deseos</a>
                                         </div>
                                     </section>
                                 </section>                      
@@ -216,7 +216,7 @@
 
 
 
-
+                <!-- {{ url_for('static', filename='Img/Menu.svg') }} -->
 
 
 
@@ -231,26 +231,26 @@
 
 
                 <div class="usuario">
-                    <a href=""><img src="static/Img/foto.svg" alt="" class="u"></a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
                     <a class="par" href="#">Usuario</a>
-                    <a href=""><img src="static/Img/arrow.svg" alt="" ></a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/arrow.svg') }}" alt="" ></a>
 
                 </div>
                 
                 <div class="cart">
-                    <a href="#"><img src="static/Img/cart_1.svg" alt="" class="c"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/cart_1.svg') }}" alt="" class="c"></a>
                     <p>0</p>
                 </div>
-                <a href="#"><img src="static/Img/LogoR.svg" alt="" class="l"></a>
+                <a href="#"><img src="{{ url_for('static', filename='Img/LogoR.svg') }}" alt="" class="l"></a>
                 <div class="buscar">
                     <label for="se"></label>
                     <input class="in" type="text" placeholder="Search..." id="se">
-                    <a href="#"><img src="static/Img/Search.svg" alt="" class="s"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/Search.svg') }}" alt="" class="s"></a>
                 </div>
                 
                 <div class="location">
                     <a href="#" class="ok">Ingresa tu ubicación</a>
-                    <a href="#"><img src="static/Img/Location.svg" alt="" class="lo"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/Location.svg') }}" alt="" class="lo"></a>
                 </div>
                 
             </nav>
@@ -306,16 +306,16 @@
                 <div class="galbuyP">
                     <div class="galbuy">
                         <div class="buygal">
-                            <button class="alineargal"><img src="static/Img/compra/rest.svg" alt=""></button>
+                            <button class="alineargal"><img src=" {{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                             <p>1</p>                           
-                            <button class="alineargal"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                            <button class="alineargal"><img src=" {{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                         </div>
                         <div>
                             <p >$25.000</p>
                         </div>
                         
                         <div>
-                            <button class="alineargal"><img src="static/Img/compra/c.svg" alt=""></button>
+                            <button class="alineargal"><img src=" {{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -329,13 +329,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -348,13 +348,13 @@
 
                     <div class="compra">
                         <div class="buy">
-                            <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                             <p>1</p>                           
-                            <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                         </div>
                         <p>$25.000</p>
                         <div>
-                            <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                         </div>
                     </div>
                     
@@ -367,13 +367,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -385,13 +385,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -403,13 +403,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -421,13 +421,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -448,13 +448,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -467,13 +467,13 @@
 
                     <div class="compra">
                         <div class="buy">
-                            <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                             <p>1</p>                           
-                            <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                         </div>
                         <p>$25.000</p>
                         <div>
-                            <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                            <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                         </div>
                     </div>
                     
@@ -486,13 +486,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -504,13 +504,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -522,13 +522,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -540,13 +540,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -556,13 +556,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -573,13 +573,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -589,13 +589,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -604,13 +604,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -619,13 +619,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -634,13 +634,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -649,13 +649,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -664,13 +664,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -679,13 +679,13 @@
                     <div class="compra">
                         <div class="compra">
                             <div class="buy">
-                                <button class="alinear"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                 <p>1</p>                           
-                                <button class="alinear"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                             </div>
                             <p>$25.000</p>
                             <div>
-                                <button class="alinear"><img src="static/Img/compra/c.svg" alt=""></button>
+                                <button class="alinear"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -706,13 +706,11 @@
                 <div>
                         <section class="CarouselPrincipal"> 
         <div class="Carousel">
-<!--             <h2>Ofertas Semanles</h2> -->
+
             <div class="slick-list" id="slick-list">
-                <!-- <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
-                </button> -->
+                
                 <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
-                    <img class="flecha" src="static/Img/left.svg" alt="">
+                    <img class="flecha" src="{{ url_for('static', filename='Img/left.svg') }}" alt="">
                 </button>
                 <div class="slick-track" id="track">
                     <div class="slick">
@@ -723,9 +721,9 @@
                                         <p>25%</p>
                                     </div>
                                 </div>
-                                
+                                 
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/moto.jpg" alt="Image">
+                                    <img src="{{ url_for('static', filename='./Img/OfertasSemanles/moto.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
@@ -733,9 +731,9 @@
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                         <p class="negro">1</p>                           
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
@@ -743,7 +741,7 @@
                                     </div>
                                     
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -769,7 +767,7 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/taylor.jpg" alt="Image">
+                                    <img src="./{{ url_for('static', filename='Img/OfertasSemanles/taylor.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
@@ -778,16 +776,16 @@
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -808,23 +806,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/auriculares.jpg" alt="Image">
+                                    <img src="./{{ url_for('static', filename='Img/OfertasSemanles/auriculares.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -839,23 +837,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/labial.jpg" alt="Image">
+                                    <img src="./{{ url_for('static', filename='Img/OfertasSemanles/labial.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -870,23 +868,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/cpugamer.jpg" alt="Image">
+                                    <img src="{{ url_for('static', filename='./Img/OfertasSemanles/cpugamer.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }} " alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -901,23 +899,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/kadariu.jpg" alt="Image">
+                                    <img src="{{ url_for('static', filename='./Img/OfertasSemanles/kadariu.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -932,23 +930,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="static/Img/OfertasSemanles/pro.jpg" alt="Image">
+                                    <img src="{{ url_for('static', filename='./Img/OfertasSemanles/pro.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="{{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -963,23 +961,23 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <img src="./Img/OfertasSemanles/chouette.jpg" alt="Image">
+                                    <img src="{{ url_for('static', filename='./Img/OfertasSemanles/chouette.jpg') }}" alt="Image">
                                 </picture>
                             </a>
 
                             <div class="compraoferta">
                                 <div class="compraoferta">
                                     <div class="buyoferta">
-                                        <button class="alinearoferta"><img src="static/Img/compra/rest.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="  {{ url_for('static', filename='Img/compra/rest.svg') }}" alt=""></button>
                                        <p class="negro">1</p>                             
-                                        <button class="alinearoferta"><img src="static/Img/compra/sum.svg" alt=""></button>                     
+                                        <button class="alinearoferta"><img src="  {{ url_for('static', filename='Img/compra/sum.svg') }}" alt=""></button>                     
                                     </div>
                                     <div>
                                         <p class="parrafopequeno">10.000</p>
                                         <p>$25.000</p>
                                     </div>
                                     <div>
-                                        <button class="alinearoferta"><img src="static/Img/compra/c.svg" alt=""></button>
+                                        <button class="alinearoferta"><img src="  {{ url_for('static', filename='Img/compra/c.svg') }}" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -990,7 +988,7 @@
             </div>
             <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
                 <!-- <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg> -->
-                <img class="flecha" src="static/Img/right.svg" alt="">
+                <img class="flecha" src=" {{ url_for('static', filename='Img/right.svg') }}" alt="">
             </button>
             
         </div>
@@ -1009,16 +1007,16 @@
       
         <section class="redes">
             <div>
-                <img src="static/Img/youtube.svg" alt="">
+                <img src="{{ url_for('static', filename='Img/youtube.svg') }}" alt="">
             </div>
             <div>
-                <img src="static/Img/facebook.svg" alt="">
+                <img src="{{ url_for('static', filename='Img/facebook.svg') }}" alt="">
             </div>
             <div>
-                <img src="static/Img/instagram.svg" alt="">
+                <img src="{{ url_for('static', filename='Img/instagram.svg') }}" alt="">
             </div>
             <div>
-                <img src="static/Img/twitter.svg" alt="">
+                <img src="{{ url_for('static', filename='Img/twitter.svg') }}" alt="">
             </div>
         </section>
 
@@ -1042,7 +1040,7 @@
             <div class="base" >
                 <h1>Sobre Nosotros</h1>
                 <p>Sobre E@BUY Acerca de los fundadores</p>
-                <a href="/mapa">Mapa del sitio</a>
+                <a href="{{url_for('mapa')}}">Mapa del sitio</a>
             </div>
         </div>
         <div class="marca">

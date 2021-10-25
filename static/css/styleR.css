@@ -119,7 +119,7 @@
 
 .interior{
     /* capas */
-    padding: 45px;
+    /* padding: 45px; */
     width: 616px;
     height: 616px;
     /* UI propiedades */
@@ -130,9 +130,13 @@
 }
 
 .formulario{
+    
+    width: 616px;
+    height: 616px;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
+    flex-direction: column;
 }
 
 .par{
@@ -140,6 +144,21 @@
     /* justify-content: space-between;  funciona*/
     justify-content: flex-end;
     
+}
+
+.extra{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+
+
+.view{
+    width: 20px;
+    height: 20px;
 }
 .par input{
     margin-bottom: 15px;
@@ -164,6 +183,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 input{
@@ -239,3 +259,64 @@ input{
 .check{
     border-radius: 17px;
 }
+
+
+
+
+.view{
+    width: 29px;
+    height: 19px;
+    cursor: pointer;
+    
+}
+
+.absolutamente{
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    top: 0;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.absolutamente button{
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    
+}
+
+.relativo{
+    position: relative;
+    
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.rs a{
+    text-decoration: none;
+}
+
+.rs button:hover{
+    background: #ffffffe5;
+}
+
+
+.container div{
+    width: 527px;
+}
+
+.yes{
+    width: 527px;
+}
+

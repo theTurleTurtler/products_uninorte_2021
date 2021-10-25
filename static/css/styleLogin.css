@@ -156,6 +156,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 input{
@@ -212,3 +213,57 @@ input{
 .b1 a{
     text-decoration: none;
 } 
+
+
+
+
+
+.view{
+    width: 29px;
+    height: 19px;
+    cursor: pointer;
+    
+}
+
+.absolutamente{
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    top: 0;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.absolutamente button{
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    
+}
+
+.relativo{
+    position: relative;
+    
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+.rs a{
+    text-decoration: none;
+}
+
+.rs button:hover{
+    background: #ffffffe5;
+}
