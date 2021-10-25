@@ -5,15 +5,14 @@ from playhouse.flask_utils import FlaskDB
 db = FlaskDB()
 
 class User(db.Model):
-    id: IntegerField(primary_key=True)
-    email: TextField()
+    email: TextField(primary_key=True)
     firstName: TextField()
     lastName: TextField()
     password: TextField()
     role: TextField()
 
 class Product(db.Model):
-    id: IntegerField(primary_key=True)
+    code: TextField(primary_key=True)
     name: TextField()
     description: TextField()
     price: IntegerField()
@@ -22,8 +21,8 @@ class Product(db.Model):
 
 class CommentsCalifications(db.Model):
     id: IntegerField(primary_key=True)
-    userId: ForeignKeyField(User)
-    productId: ForeignKeyField(Product)
+    userEmail: ForeignKeyField(User)
+    productCode: ForeignKeyField(Product)
     content: TextField()
     calification: IntegerField()
     date: TextField()
@@ -31,17 +30,18 @@ class CommentsCalifications(db.Model):
 
 class Wishes(db.Model):
     id: IntegerField(primary_key=True)
-    userId: ForeignKeyField(User)
-    productId: ForeignKeyField(Product)
+    userEmail: ForeignKeyField(User)
+    productCode: ForeignKeyField(Product)
     state: TextField() ## 0: inactive, 1: active
 
 class Purchases(db.Model):
     id: IntegerField(primary_key=True)
-    userId: ForeignKeyField(User)
+    userEmail: ForeignKeyField(User)
     date: TextField()
 
 class PurchasedProducts(db.Model):
     id: IntegerField(primary_key=True)
     purchaseId: ForeignKeyField(Purchases)
-    productId: ForeignKeyField(Product)
+    productCode: ForeignKeyField(Product)
     price: IntegerField()
+    quantity: IntegerField()

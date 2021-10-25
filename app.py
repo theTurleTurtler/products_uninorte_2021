@@ -1,3 +1,4 @@
+from os import name
 from flask import Flask, session
 from flask import render_template as render
 from flask import redirect, url_for
@@ -37,23 +38,25 @@ def agregar():
         nombre = request.form['nombre']
         precio = request.form['precio']
         comentario = request.form['comentario']
-        con = sql_connection()
-        cur = con.cursor()
-        consulta = "INSERT INTO producto (codigo, nombre, precio, comentario) VALUES (?,?,?,?)"
-        cur.execute(consulta, [codigo, nombre, precio, comentario])
-        con.commit()
+        ##con = sql_connection()
+        ##cur = con.cursor()
+        ##consulta = "INSERT INTO producto (codigo, nombre, precio, comentario) VALUES (?,?,?,?)"
+        ##cur.execute(consulta, [codigo, nombre, precio, comentario])
+        product = Product(code=codigo, name=nombre, description=comentario, price=precio, stock=0)
+        ##con.commit()
        
         flash('Producto Agregado Exitosamente')
         return render("index.html")
     
 @app.route('/edit_product/<id_producto>', methods=['GET', 'POST'])
 def edit_contact(id_producto):
-    con = sql_connection()
-    cur = con.cursor()
-    consulta = "SELECT * FROM producto WHERE id_producto=?"
-    cur = cur.execute(consulta, [id_producto])
-    data = cur.fetchone()
-    cur.close()
+    ##con = sql_connection()
+    ##cur = con.cursor()
+    ##consulta = "SELECT * FROM producto WHERE id_producto=?"
+    ##cur = cur.execute(consulta, [id_producto])
+    ##data = cur.fetchone()
+    ##cur.close()
+    data = Product.select().where(Product.code == id_producto)
     return render('edit_product.html', contacts=data)
 
 @app.route('/update/<id_producto>', methods=['GET', 'POST'])
