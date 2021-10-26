@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/stylesMapa.css">
-    <link rel="shortcut icon" href="Img/FaviconR.png" type="image/x-icon">
-    <script src="js/mapa.js" defer></script>
-    <script src="js/product.js" defer></script>
-    <script src="js/direccion.js" defer></script>
-    <script src="js/perfil.js" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesMapa.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Img/FaviconR.png') }}" type="image/x-icon">
+   
+    <script src="{{ url_for('static', filename='js/product.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/direccion.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/perfil.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/mapa.js')}}" defer></script>
 </head>
 <body class="body">
 
@@ -23,7 +24,7 @@
 
             </div>
            <div class="sera">
-            <img src="Img/Location.svg" alt="" class="img-galeria">
+            <img src="{{ url_for('static', filename='Img/Location.svg') }}" alt="" class="img-galeria">
 
          
                  <p class="recibir">¿Donde recibirás tu compra?</p>
@@ -35,7 +36,7 @@
                                 <div class="num">
                                     <div class="num1">            
                                         <div>
-                                            <img src="Img/IconosNav/awesome-check-circle.svg" alt="">
+                                            <img src="{{ url_for('static', filename='Img/IconosNav/awesome-check-circle.svg') }}" alt="">
                                         </div>
                                         <div class="columna">
                                             <input class="nothing" type="text" id="direccion" value="" placeholder="Dirección...">
@@ -77,10 +78,10 @@
 
 
 
-
+<!-- {{ url_for('static', filename='Img/Menu.svg') }} -->
 
         <section class="imagen-light">
-            <img src="Img/Close.svg" alt="" class="close">
+            <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="close">
             <img src="" alt="" class="agregar-imagen">         
         </section>
     </section>
@@ -106,9 +107,9 @@
 
 
     <section class="galeriamap">     
-        <img src="Img/sitemap.png" alt="" class="img-galerial">  
+        <img src="{{ url_for('static', filename='Img/sitemap.png') }}" alt="" class="img-galerial">  
         <section class="imagen-l">
-            <img src="Img/Close.svg" alt="" class="close">
+            <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="close">
             <img src="" alt="" class="agregar-imagen">         
         </section>
     </section>
@@ -121,31 +122,31 @@
         <div class="fondo31">
             <div class="yes">
                 <div class="yes2">
-                    <a href=""><img src="Img/foto.svg" alt="" class="u"></a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
                     <p>Nombre</p>
                     <P>Correo Electronico</P>
                 </div>
                 <div class="claro">
                     <div>
-                        <a href=""><img src="Img/IconosNav/metro-profile.svg" alt="">Perfil</a>
-                        <a href=""><img src="Img/IconosNav/awesome-edit.svg" alt="">Editar Perfil</a>
-                        <a href=""><img src="Img/IconosNav/awesome-database.svg" alt="">Politica de Privacidad</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/metro-profile.svg') }}" alt="">Perfil</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-edit.svg') }}" alt="">Editar Perfil</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-database.svg') }}" alt="">Politica de Privacidad</a>
                     </div>
                     <div>
-                        <a href=""><img src="Img/IconosNav/material-add-alert.svg" alt="">Mis alertas</a>
-                        <a href=""><img src="Img/IconosNav/ionic-md-help-circle.svg" alt="">Ayuda</a>
-                        <a href=""><img src="Img/IconosNav/metro-location.svg" alt="" class="img1">Agregar ubicación</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/material-add-alert.svg') }}" alt="">Mis alertas</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-md-help-circle.svg') }}" alt="">Ayuda</a>
+                        <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/metro-location.svg') }}" alt="" class="img1">Agregar ubicación</a>
                     </div>
                 </div>
                 <div class="listadeseos">
-                    <a href=""><img src="Img/IconosNav/ionic-md-star.svg" alt="">Lista de deseos</a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-md-star.svg') }}" alt="">Lista de deseos</a>
                 </div>
                 <div class="salirahora">
-                    <a href=""><img src="Img/IconosNav/awesome-sign-out-alt.svg" alt="">Salir</a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-sign-out-alt.svg') }}" alt="">Salir</a>
                 </div>
             </div>
             <section class="imagen-light">
-                <img src="Img/Close.svg" alt="" class="closek">
+                <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="closek">
                 <img src="" alt="" class="agregar-imagen">         
             </section>
         </div>
@@ -164,64 +165,63 @@
 
 
 
-     <!-- <img src="Img/fragrance.jpg" alt="" class="agregar-imagen"> -->
     <header>
         <div class="container">
             <nav>
-                <img src="Img/Menu.svg" alt="" class="m">   
+                <img src="{{ url_for('static', filename='Img/Menu.svg') }}" alt="" class="m">   
 
                 <nav class="menu-navegacion">
-                    <img class="superior" src="Img/IconosNav/contornoatrazado.svg" alt="">
-                    <img class="abs" src="Img/IconosNav/Logo.svg" alt="">
+                    <img class="superior" src="{{ url_for('static', filename='Img/IconosNav/contornoatrazado.svg') }}" alt="">
+                    <img class="abs" src=" {{ url_for('static', filename='Img/IconosNav/Logo.svg') }}" alt="">
                                 <section class="contenedorA">
                                     
                                     <section class="ladoA">
                                         <h2>Categorias</h2>
                                         <hr/>
-                                        <a href="#Televisores"><img src="Img/IconosNav/awesome-tv.svg" alt="">Televisores</a>
-                                        <a href="#Celulares"><img src="Img/IconosNav/ionic-ios-phone-portrait.svg" alt="">Celulares</a>
-                                        <a href="#Bolsos"><img src="Img/IconosNav/awesome-shopping-bag.svg" alt="">Bolsos</a>
-                                        <a href="#Tecnologia"><img src="Img/IconosNav/material-laptop-mac.svg" alt="">Tecnologia</a>
-                                        <a href="#Camaras"><img src="Img/IconosNav/ionic-ios-camera.svg" alt="">Camaras</a>
-                                        <a href="#Cosasdelhogar"><img src="Img/IconosNav/ionic-md-home.svg" alt="">Cosas del hogar</a>
-                                        <a href="#RelojesyJoyas"><img src="Img/IconosNav/ionic-md-watch.svg" alt="">Relojes y Joyas</a>
-                                        <a href="#Mascotas"><img src="Img/IconosNav/awesome-dog.svg" alt="">Mascotas</a>
-                                        <a href="#Juegos"><img src="Img/IconosNav/ionic-logo-game-controller-b.svg" alt="">Juegos</a>
-                                        <a href="#Deporte"><img src="Img/IconosNav/awesome-volleyball-ball.svg" alt="">Deporte</a>
-                                        <a href="#Musica"><img src="Img/IconosNav/awesome-music.svg" alt="">Musica</a>
-                                        <a href="#Salud"><img src="Img/IconosNav/awesome-heartbeat.svg" alt="">Salud</a>
-                                        <a href="#Motos"><img src="Img/IconosNav/awesome-motorcycle.svg" alt="">Motos</a>
-                                        <a href="#Carros"><img src="Img/IconosNav/awesome-car.svg" alt="">Carros</a>
-                                        <a href="#Herramientas"><img src="Img/IconosNav/awesome-tools.svg" alt="">Herramientas</a>
-                                        <a href="#Zapatos"><img src="Img/IconosNav/awesome-shoe-prints.svg" alt="">Zapatos</a>
-                                        <a href="#MaquillajeyBelleza"><img src="Img/IconosNav/map-beauty-salon.svg" alt="">Maquillajje y Belleza</a>
-                                        <a href="#Ropa"><img src="Img/IconosNav/ionic-ios-shirt.svg" alt="">Ropa</a>
+                                        <a href="#Televisores"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-tv.svg') }}" alt="">Televisores</a>
+                                        <a href="#Celulares"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-ios-phone-portrait.svg') }}" alt="">Celulares</a>
+                                        <a href="#Bolsos"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-shopping-bag.svg') }}" alt="">Bolsos</a>
+                                        <a href="#Tecnologia"><img src="   {{ url_for('static', filename='Img/IconosNav/material-laptop-mac.svg') }}" alt="">Tecnologia</a>
+                                        <a href="#Camaras"><img src="  {{ url_for('static', filename='Img/IconosNav/ionic-ios-camera.svg') }}" alt="">Camaras</a>
+                                        <a href="#Cosasdelhogar"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-home.svg') }}" alt="">Cosas del hogar</a>
+                                        <a href="#RelojesyJoyas"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-watch.svg') }}" alt="">Relojes y Joyas</a>
+                                        <a href="#Mascotas"><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-dog.svg') }}" alt="">Mascotas</a>
+                                        <a href="#Juegos"><img src="   {{ url_for('static', filename='Img/IconosNav/ionic-logo-game-controller-b.svg') }}" alt="">Juegos</a>
+                                        <a href="#Deporte"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-volleyball-ball.svg') }}" alt="">Deporte</a>
+                                        <a href="#Musica"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-music.svg') }}" alt="">Musica</a>
+                                        <a href="#Salud"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-heartbeat.svg') }}" alt="">Salud</a>
+                                        <a href="#Motos"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-motorcycle.svg') }}" alt="">Motos</a>
+                                        <a href="#Carros"><img src="   {{ url_for('static', filename='Img/IconosNav/awesome-car.svg') }}" alt="">Carros</a>
+                                        <a href="#Herramientas"><img src=" {{ url_for('static', filename='Img/IconosNav/awesome-tools.svg') }}" alt="">Herramientas</a>
+                                        <a href="#Zapatos"><img src="  {{ url_for('static', filename='Img/IconosNav/awesome-shoe-prints.svg') }}" alt="">Zapatos</a>
+                                        <a href="#MaquillajeyBelleza"><img src="   {{ url_for('static', filename='Img/IconosNav/map-beauty-salon.svg') }}" alt="">Maquillajje y Belleza</a>
+                                        <a href="#Ropa"><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-ios-shirt.svg') }}" alt="">Ropa</a>
                                         
                                     </section>
                                     <section class="ladoB">
                                         <h2 class="others">Otros</h2>
                                         <hr/>
                                         
-                                        <a href="#SobreNosotros"><img src="Img/IconosNav/ionic-ios-people.svg" alt="">Sobre Nosotros</a>
-                                        <a href="#Contactenos"><img src="Img/IconosNav/material-contacts.svg" alt="">Contactenos</a>
-                                        <a href="#Ofertas"><img src="Img/IconosNav/material-local-offer.svg" alt="">Ofertas</a>
-                                        <a href="#NuestrasTiendas"><img src="Img/IconosNav/metro-location.svg" alt="">NuestrasTiendas</a>
+                                        <a href="#SobreNosotros"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-ios-people.svg') }}" alt="">Sobre Nosotros</a>
+                                        <a href="#Contactenos"><img src="  {{ url_for('static', filename='Img/IconosNav/material-contacts.svg') }}" alt="">Contactenos</a>
+                                        <a href="#Ofertas"><img src="  {{ url_for('static', filename='Img/IconosNav/material-local-offer.svg') }}" alt="">Ofertas</a>
+                                        <a href="#NuestrasTiendas"><img src="  {{ url_for('static', filename='Img/IconosNav/metro-location.svg') }}" alt="">NuestrasTiendas</a>
                                     </section>
                                 </section>
                                 
                                 <section class="contenedorB">
                                     <section class="country">
                                        <div class="lineas">
-                                            <a href="#pais"><img src="Img/IconosNav/colombia.svg" alt="">Colombia</a>
+                                            <a href="#pais"><img src=" {{ url_for('static', filename='Img/IconosNav/colombia.svg') }}" alt="">Colombia</a>
                                        </div>
                                         
                                        
-                                        <a href="#help"><img src="Img/IconosNav/ionic-md-help-circle.svg" alt="">Ayuda</a>
-                                        <a href="#lenguages"><img src="Img/IconosNav/metro-earth2.svg" alt="">Español</a>
+                                        <a href="#help"><img src=" {{ url_for('static', filename='Img/IconosNav/ionic-md-help-circle.svg') }}" alt="">Ayuda</a>
+                                        <a href="#lenguages"><img src="{{ url_for('static', filename='Img/IconosNav/metro-earth2.svg') }}" alt="">Español</a>
                                     </section>
                                     <section class="deseos">
                                        <div class="lineas">
-                                        <a href="#Lista"><img src="Img/IconosNav/ionic-md-star.svg" alt="">Lista de deseos</a>
+                                        <a href="#Lista"><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-star.svg') }}" alt="">Lista de deseos</a>
                                         </div>
                                     </section>
                                 </section>                      
@@ -229,26 +229,42 @@
                 </nav>
 
 
+
+                <!-- {{ url_for('static', filename='Img/Menu.svg') }} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="usuario">
-                    <a href=""><img src="Img/foto.svg" alt="" class="u"></a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
                     <a class="par" href="#">Usuario</a>
-                    <a href=""><img src="Img/arrow.svg" alt="" ></a>
+                    <a href=""><img src=" {{ url_for('static', filename='Img/arrow.svg') }}" alt="" ></a>
+
                 </div>
                 
                 <div class="cart">
-                    <a href="#"><img src="Img/cart_1.svg" alt="" class="c"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/cart_1.svg') }}" alt="" class="c"></a>
                     <p>0</p>
                 </div>
-                <a href="Producto.html"><img src="Img/LogoR.svg" alt="" class="l"></a>
+                <a href="{{url_for('producto')}}"><img src="{{ url_for('static', filename='Img/LogoR.svg') }}" alt="" class="l"></a>
                 <div class="buscar">
                     <label for="se"></label>
                     <input class="in" type="text" placeholder="Search..." id="se">
-                    <a href="#"><img src="Img/Search.svg" alt="" class="s"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/Search.svg') }}" alt="" class="s"></a>
                 </div>
                 
                 <div class="location">
                     <a href="#" class="ok">Ingresa tu ubicación</a>
-                    <a href="#"><img src="Img/Location.svg" alt="" class="lo"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='Img/Location.svg') }}" alt="" class="lo"></a>
                 </div>
                 
             </nav>
@@ -287,7 +303,7 @@
                 <section class="seccion">
                     <section class="imagen">
                         <div class="imgsitemap">
-                            <a href="#"><img class="sitemap" src="Img/IconosNav/sitemap.svg" alt=""></a>
+                            <a href="#"><img class="sitemap" src="{{ url_for('static', filename='Img/IconosNav/sitemap.svg') }}" alt=""></a>
                             <h2>Imagen</h2>
                             
                         </div>
@@ -298,73 +314,73 @@
                         <h2>Tabla de contenido</h2>
                         <hr>
                         <div class="fields">
-                            <img src="Img/IconosNav/menu.svg" alt="">
+                            <img src="{{ url_for('static', filename='Img/IconosNav/menu.svg') }}" alt="">
                             <p>Menu</p>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Televisores</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Celulares</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Bolsos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Tecnologia</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Camaras</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Cosas del hogar</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Relojes y Joyas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Mascotas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Juegos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Deporte</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Musica</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Salud</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Motos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Carros</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Herramientas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Zapatos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Maquillaje y Belleza</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Ropa</a> 
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Televisores</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Celulares</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Bolsos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Tecnologia</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Camaras</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Cosas del hogar</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Relojes y Joyas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Mascotas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Juegos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Deporte</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Musica</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Salud</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Motos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Carros</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Herramientas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Zapatos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Maquillaje y Belleza</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Ropa</a> 
                                 <ul>
-                                    <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Mujer</a></li>
-                                    <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Hombre</a></li>
-                                    <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Niños</a></li>
+                                    <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Mujer</a></li>
+                                    <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Hombre</a></li>
+                                    <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Niños</a></li>
                                 </ul>
                                 </li>
                            
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Ayuda</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Sobre Nosotros</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Contactenos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Ofertas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Nuestras Tiendas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Lista de deseos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Ayuda</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Sobre Nosotros</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Contactenos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Ofertas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Nuestras Tiendas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Lista de deseos</a></li>
                             
                         </ul>
                         <hr>
                         <div class="fields">
-                            <a href="#"><img src="Img/IconosNav/menu.svg" alt=""></a> 
+                            <a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/menu.svg') }}" alt=""></a> 
                             <p>Usuario</p>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Perfil</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Editar Perfil</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Politica de privacidad</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Lista de deseos</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Mis alertas</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Ayuda</a></li>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Agregar Ubicación</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Perfil</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Editar Perfil</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Politica de privacidad</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Lista de deseos</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Mis alertas</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Ayuda</a></li>
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Agregar Ubicación</a></li>
                             
                         </ul>
                         <hr>
                         <div class="fields">
-                            <a href="#"><img src="Img/IconosNav/menu.svg" alt=""></a> 
+                            <a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/menu.svg') }}" alt=""></a> 
                             <p>Carro</p>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Compras</a></li>                        
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Compras</a></li>                        
                         </ul>
                         <hr>
                         <div class="fields">
-                            <a href="#"><img src="Img/IconosNav/menu.svg" alt=""></a> 
+                            <a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/menu.svg') }}" alt=""></a> 
                             <p>Ubicacion</p>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="Img/IconosNav/link.svg" alt="">Ubicación</a></li>                        
+                            <li><a href="#"><img src="{{ url_for('static', filename='Img/IconosNav/link.svg') }}" alt="">Ubicación</a></li>                        
                         </ul>
     
                         
@@ -386,16 +402,16 @@
 
                 <section class="redes">
                     <div>
-                        <img src="Img/youtube.svg" alt="">
+                        <img src="{{ url_for('static', filename='Img/youtube.svg') }}" alt="">
                     </div>
                     <div>
-                        <img src="Img/facebook.svg" alt="">
+                        <img src="{{ url_for('static', filename='Img/facebook.svg') }}" alt="">
                     </div>
                     <div>
-                        <img src="Img/instagram.svg" alt="">
+                        <img src="{{ url_for('static', filename='Img/instagram.svg') }}" alt="">
                     </div>
                     <div>
-                        <img src="Img/twitter.svg" alt="">
+                        <img src="{{ url_for('static', filename='Img/twitter.svg') }}" alt="">
                     </div>
                 </section>
         
