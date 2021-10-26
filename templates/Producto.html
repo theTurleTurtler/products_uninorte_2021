@@ -95,11 +95,26 @@
             <div class="yes">
                 <div class="yes2">
                     <a href=""><img src="{{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
-                    {% for message in get_flashed_messages() %}
-                            <div class="flash" style="color: black;">{{ message }}</div>
-                    {% endfor %}
+                    {% if g.user or session["name"] %}
+                        {% if g.user %}
+                            {% for message in get_flashed_messages() %}
+                                    <div class="flash" style="color: black;">{{ message }}</div>
+                            {% endfor %}
+                        
+                        {% else %}
+                            {% for message in get_flashed_messages() %}
+                                    <div class="flash" style="color: black;">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% else %}
                     <p>Nombre</p>
                     <P>Correo Electronico</P>
+                    {% endif %}
+                    
+                    
+                    
+                    
+                    
                 </div>
                 <div class="claro">
                     <div>
@@ -116,9 +131,12 @@
                 <div class="listadeseos">
                     <a href=""><img src="{{ url_for('static', filename='Img/IconosNav/ionic-md-star.svg') }}" alt="">Lista de deseos</a>
                 </div>
+                
                 <div class="salirahora">
                     <a href="/logout"><img src="{{ url_for('static', filename='Img/IconosNav/awesome-sign-out-alt.svg') }}" alt="">Salir</a>
                 </div>
+
+                
             </div>
             <section class="imagen-light">
                 <img src="{{ url_for('static', filename='Img/Close.svg') }}" alt="" class="closek">
@@ -231,9 +249,9 @@
 
 
                 <div class="usuario">
-                    <a href=""><img src=" {{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
+                    <a href="#"><img src=" {{ url_for('static', filename='Img/foto.svg') }}" alt="" class="u"></a>
                     <a class="par" href="#">Usuario</a>
-                    <a href=""><img src=" {{ url_for('static', filename='Img/arrow.svg') }}" alt="" ></a>
+                    <a href="#"><img src=" {{ url_for('static', filename='Img/arrow.svg') }}" alt="" ></a>
 
                 </div>
                 

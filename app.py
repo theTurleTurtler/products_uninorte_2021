@@ -6,8 +6,7 @@ from flask import request
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from models import *
-from config import dev
+
 # -------------------------------------------------------
 
 import os
@@ -28,8 +27,7 @@ import google.auth.transport.requests
 
 from flask.helpers import flash
 app = Flask(__name__)
-app.config.from_object(dev)
-db.init_app(app)
+
 
 # @app.route("/")
 # def index():
@@ -64,25 +62,25 @@ def agregar():
         nombre = request.form['nombre']
         precio = request.form['precio']
         comentario = request.form['comentario']
-        ##con = sql_connection()
-        ##cur = con.cursor()
-        ##consulta = "INSERT INTO producto (codigo, nombre, precio, comentario) VALUES (?,?,?,?)"
-        ##cur.execute(consulta, [codigo, nombre, precio, comentario])
-        product = Product(code=codigo, name=nombre, description=comentario, price=precio, stock=0)
-        ##con.commit()
+        con = sql_connection()
+        cur = con.cursor()
+        consulta = "INSERT INTO producto (codigo, nombre, precio, comentario) VALUES (?,?,?,?)"
+        cur.execute(consulta, [codigo, nombre, precio, comentario])
+        
+        con.commit()
        
         flash('Producto Agregado Exitosamente')
         return render("index.html")
     
 @app.route('/edit_product/<id_producto>', methods=['GET', 'POST'])
 def edit_contact(id_producto):
-    ##con = sql_connection()
-    ##cur = con.cursor()
-    ##consulta = "SELECT * FROM producto WHERE id_producto=?"
-    ##cur = cur.execute(consulta, [id_producto])
-    ##data = cur.fetchone()
-    ##cur.close()
-    data = Product.select().where(Product.code == id_producto)
+    con = sql_connection()
+    cur = con.cursor()
+    consulta = "SELECT * FROM producto WHERE id_producto=?"
+    cur = cur.execute(consulta, [id_producto])
+    data = cur.fetchone()
+    cur.close()
+    
     return render('edit_product.html', contacts=data)
 
 @app.route('/update/<id_producto>', methods=['GET', 'POST'])
@@ -293,6 +291,8 @@ def callback():
 
     session["google_id"] = id_info.get("sub")
     session["name"] = id_info.get("name")
+    flash(id_info.get("name"))
+    flash(id_info.get("email"))
     return redirect("/Product")
 
 
@@ -309,6 +309,17 @@ def login_is_required(function):
 
 @app.route('/Producto', methods=['GET', 'POST'])
 def producto(): 
+    if g.user:
+        db = get_db()       
+        # error = None
+        cookie = request.cookies.get('correoEmail')  # Obtener, leer cookie
+        print(cookie)
+        cur = db.execute('SELECT * FROM usuario WHERE correo = ?', (cookie,)).fetchone()
+        #consulta
+        flash(cur[1] + " " + cur[2])
+        flash(cookie)
+    else:
+        return render('Producto.html')
     return render('Producto.html')
 
 @app.route('/Product', methods=['GET', 'POST'])
