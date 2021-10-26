@@ -16,7 +16,7 @@ db.init_app(app)
 
 @app.route("/")
 def index():
-    return render("index.html")
+    return render("Anadir.html")
 
 
 @app.route("/califications/<product_id>", methods=["GET", "POST"])
@@ -47,6 +47,8 @@ def agregar():
        
         flash('Producto Agregado Exitosamente')
         return render("index.html")
+    else:
+        return render("Anadir.html")
     
 @app.route('/edit_product/<id_producto>', methods=['GET', 'POST'])
 def edit_contact(id_producto):

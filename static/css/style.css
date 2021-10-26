@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    background: #f2f2f2;
+    
+}
+
+/* Navegacion */
+
+header{
+    
+    background: white;
+   
+    width: 100%; /*hacemos que la cabecera ocupe el ancho completo de la página */
+	/* left: 0; Posicionamos la cabecera al lado izquierdo */
+	/* top: 0; Posicionamos la cabecera pegada arriba */
+	/* position: fixed; */
+    
+
+/*     top: 0;
+    left: 0;
+    right: 0;
+    position: fixed; */
+    box-shadow: 0px 5px 6px #00000029;
+   
+    /* margin-bottom: 5px; */
+    
+}
+
+
+
+.container{
+    width: 100%;
+    max-width: 1670px;
+    height: 169px;
+    /* background: #04ff8a;  */
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    
+}
+
+.container nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* img{
+    width: 50px;
+    height: 50px;
+    
+} */
+
+.cart{
+    width: 165px;
+    height: 81px;
+    background: #70707014 0% 0% no-repeat padding-box;
+    border-radius: 44px;
+    opacity: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+nav{
+    width: 100%;
+    max-width: 1670px;
+    padding: 30px 22px 30px;
+   /*  background: cyan; */
+}
+
+nav a{
+    text-decoration: none;
+    font: normal normal normal 22px/30px;
+    color: var(--unnamed-color-707070);
+    color: #707070;
+}
+
+nav div{ 
+    display: inline-block
+}
+
+.usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.usuario .par{
+    margin: 0 15px;
+}
+
+.location{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.location .ok{
+    width: 50%;
+    
+}
+
+.m{
+    width: 59px;
+    height: 37px;
+}
+
+.u{
+    width: 52px;
+    height: 52px;
+}
+
+.c{
+    width: 52px;
+    height: 51px;
+}
+
+.l{
+    width: 97px;
+    height: 100px;
+}
+
+.buscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.in{
+    width: 293px;
+    height: 51px;
+    border: 1px solid #707070;
+    border-radius: 26px;
+    opacity: 1;
+    padding: 12px 12px 12px;
+    outline: none;
+}
+.s{
+    width: 66px;
+    height: 76px;
+    transform: matrix(0.88, -0.47, 0.47, 0.88, 0, 0);
+}
+
+
+.lo{
+    width: 43px;
+    height: 74px;
+}
+
+/* ------------------------------------------------------------------------------------Main--------------------------------------------------------------------------------- */
+
+.titulo{
+    padding: 2px;
+    margin: 3px;
+    text-align: center;
+    top: 232px;
+    left: 213px;
+    width: 221px;
+    height: 40px;
+    text-align: center;
+    font: normal normal normal 30px/40px Segoe UI;
+    letter-spacing: 0px;
+    color: #515151;
+    opacity: 1;
+}
+.rectangulo{
+    padding: 2%;
+    margin: 3%;
+   
+    top: 301px;
+left: 213px;
+width: 100%;
+height: auto;
+
+border: 1px solid var(--unnamed-color-707070);
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+opacity: 1;
+}
+h2{
+    
+    top: 336px;
+    float:left;
+left: 514px;
+width: auto;
+height: 24px;
+text-align:center;
+font: normal normal normal 18px/24px Segoe UI;
+letter-spacing: 0px;
+color: #6C6C6C;
+opacity: 1;
+}
+
+.comentario{
+    top: 639px;
+    padding: 2%;
+    margin: 10%; 
+left: 498px;
+width: 959px;
+height: 561px;
+border: 1px solid var(--unnamed-color-707070);
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border: 1px solid #707070;
+border-radius: 20px 20px 0px 0px;
+opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    top: 1423px;
+    left: 0px;
+    width: 100%;
+    height: 464px;
+    opacity: 1;
+}
+.footer2{
+    top: 1549px;
+    left: 0px;
+    width: 100%;
+    height: 400px;
+    background: transparent linear-gradient(99deg, #DC0A6C 0%, #E7B920FC 57%, #FF4E00 100%) 0% 0% no-repeat padding-box;
+    border-radius: 169px 169px 0px 0px;
+    opacity: 1;
+}
+.footer3{
+    top: 1586px;
+    left: 122px;
+    width: 1779px;
+    height: 249px;
+    opacity: 1;
+}
+.conte_foter{
+    padding: 2%;
+    margin: 3%;
+   
+    top: 1645px;
+    left: 123px;
+    width: 300px;
+    height: 181px;
+    text-align: center;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    float: left;
+}
